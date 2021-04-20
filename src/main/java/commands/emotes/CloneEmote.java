@@ -27,7 +27,7 @@ public class CloneEmote implements Command {
         }
 
         if (event.getMessage().getEmotes().size() < 1) {
-            event.getTextChannel().sendMessage(Responses.Errors.INSUFFICIENT_ARGS("upload")).queue();
+            event.getTextChannel().sendMessage(Responses.Errors.INSUFFICIENT_ARGS("clone")).queue();
             return;
         }
 

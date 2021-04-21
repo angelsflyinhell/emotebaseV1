@@ -22,6 +22,10 @@ public class Responses {
         public static String ADD_SUCCESSFUL(String emoteName) {
             return "Your Emote `:" + emoteName + ":` has been added to this Server successfully!";
         }
+
+        public static String WIDEN_SUCCESSFUL(String emoteName) {
+            return "Your Emote `:" + emoteName + ":` is kinda thicc now!";
+        }
     }
 
 }

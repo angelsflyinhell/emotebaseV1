@@ -3,10 +3,12 @@ package core;
 import commands.Help;
 import commands.emotes.CloneEmote;
 import commands.emotes.UploadEmote;
+import commands.emotes.WidenEmote;
 import core.processing.CommandHandler;
 import core.processing.CommandListener;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.OnlineStatus;
+import net.dv8tion.jda.api.entities.Activity;
 import net.dv8tion.jda.api.utils.Compression;
 import utils.Config;
 
@@ -19,6 +21,7 @@ public class Main {
         builder.setCompression(Compression.ZLIB);
         builder.setStatus(OnlineStatus.ONLINE);
         builder.addEventListeners(new CommandListener());
+        builder.setActivity(Activity.watching("beta™"));
 
         builder.build();
         Commands();
@@ -29,5 +32,6 @@ public class Main {
 
         CommandHandler.commands.put("upload", new UploadEmote());
         CommandHandler.commands.put("clone", new CloneEmote());
+        CommandHandler.commands.put("widen", new WidenEmote());
     }
 }

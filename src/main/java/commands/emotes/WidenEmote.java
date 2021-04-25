@@ -40,9 +40,9 @@ public class WidenEmote implements Command {
 
         List<byte[]> all = Imager.getCurrent(entityType[entityType.length - 1]);
 
-        for (byte[] data : all) {
-            Icon icon = Icon.from(data);
-            event.getGuild().createEmote(emoteName, icon).queue();
+        for (int i = 0; i < all.size(); i++) {
+            Icon icon = Icon.from(all.get(i));
+            event.getGuild().createEmote(emoteName + (i + 1), icon).queue();
         }
 
         event.getTextChannel().sendMessage(Responses.Emotes.WIDEN_SUCCESSFUL(emoteName)).queue();
